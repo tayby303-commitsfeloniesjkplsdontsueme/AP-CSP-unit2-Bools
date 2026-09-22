@@ -13,8 +13,18 @@
 //   "positive odd"    if num is positive and odd
 //   "negative even"   if num is negative and even
 //   "negative odd"    if num is negative and odd
-function classifyNumber(num) {
+function classifyNumber(n) {
   // TODO: your code here
+  if(n===0)
+        return `${n} is zero`;
+    else if (n>0 && n % 2 ===0)
+        return `${n} is positive & even`;
+    else if (n>0 && n % 2 ===1)
+        return `${n} is positive & odd`;
+    else if (n<0 && n % 2 ===0)
+        return `${n} is negative & even`;
+    else
+        return `${n} is negative & odd`;
 }
 
 console.log(classifyNumber(0)); // "zero"
@@ -33,6 +43,21 @@ console.log(classifyNumber(-7)); // "negative odd"
 // If score is less than 0 or greater than 100, return "Invalid score".
 function getLetterGrade(score) {
   // TODO: your code here
+  if (score >= 90) {
+      return `Score ${score} -> A`;
+    } 
+    else if (score >= 80 && score <= 89) {
+      return `Score ${score} -> B`;
+    } 
+    else if (score >= 70 && score <= 79) {
+      return `Score ${score} -> C`;
+    } 
+    else if (score >= 60 && score <= 69) {
+      return `Score ${score} -> D`;
+    } 
+    else if (score < 60) {
+      return `Score ${score} -> F`;
+    }
 }
 
 console.log(getLetterGrade(95)); // "A"
@@ -49,6 +74,18 @@ console.log(getLetterGrade(150)); // "Invalid score"
 //   otherwise, num converted to a string
 function fizzBuzz(num) {
   // TODO: your code here
+  if (num % 3 ===0 && num % 5 ===0){
+    return "FizzBuzz"
+    }
+    else if (num % 3 ===0 && !(num % 5 ===0)){
+      return "Fizz"
+    }
+    else if (num % 5 ===0 && !(num % 3 ===0)){
+      return "Buzz"
+    }
+    else{
+      return `${num}`
+    }
 }
 
 console.log(fizzBuzz(3)); // "Fizz"
@@ -66,6 +103,21 @@ console.log(fizzBuzz(7)); // "7"
 //   weight > 5   -> 12
 function getShippingCost(weight, isMember) {
   // TODO: your code here (nested conditional — check isMember first, then weight)
+  if (isMember===true && weight<=5){
+    return 'The shipping cost is free'
+  }
+  else if (isMember===true && weight>=5){
+    return 'The shipping cost is $3'
+  }
+  else if (isMember===false && weight <= 1){
+    return 'The shipping cost is $5'
+  }
+  else if (isMember===false && weight <= 5){
+    return 'The shipping cost is $8'
+  }
+  else if (isMember===false && weight > 5){
+    return 'The shipping cost is $12'
+  }
 }
 
 console.log(getShippingCost(3, true)); // 0
@@ -77,9 +129,14 @@ console.log(getShippingCost(10, false)); // 12
 // ---------- Stretch (optional) ----------
 // Rewrite the even/odd check from Problem 1 using the ternary operator
 // instead of if / else.
-function isEvenTernary(num) {
+function isEvenTernary(nu) {
   // TODO: your code here
+  if (nu%2===0){
+    return true
+  }
+  else{
+    return false
+  }
 }
-
 console.log(isEvenTernary(4)); // true
 console.log(isEvenTernary(7)); // false
