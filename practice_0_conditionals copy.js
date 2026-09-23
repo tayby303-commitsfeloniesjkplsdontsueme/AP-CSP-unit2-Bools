@@ -129,9 +129,9 @@ console.log(getShippingCost(10, false)); // 12
 // ---------- Stretch (optional) ----------
 // Rewrite the even/odd check from Problem 1 using the ternary operator
 // instead of if / else.
-function isEvenTernary(nu) {
+function isEvenTernary(x) {
   // TODO: your code here
-  if (nu%2===0){
+  if (x%2===0){
     return true
   }
   else{
